@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { Toaster } from 'react-hot-toast';
 import Header from "./Header";
 import Navbar from './Navbar';
 
@@ -14,6 +15,7 @@ const WorkasanaLayout = ({children,heading}) => {
         </div>
         </div>
         </div>
+        <Toaster/>
         </div>
     )
 }
