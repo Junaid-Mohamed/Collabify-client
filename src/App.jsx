@@ -9,7 +9,7 @@ function App() {
   const navigate = useNavigate();
 
   useEffect(()=>{
-    navigate('/create-task')
+    navigate('/dashboard')
   },[navigate]) 
   return (
     <>

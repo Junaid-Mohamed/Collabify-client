@@ -12,6 +12,8 @@ import ProjectManagement from './pages/ProjectManagement.jsx'
 import Report from './pages/Report.jsx'
 import Signup from './pages/Signup.jsx'
 import TaskCreation from './pages/TaskCreation.jsx'
+import TaskDetails from './pages/TaskDetails.jsx'
+import TeamCreation from './pages/TeamCreation.jsx'
 import TeamManagement from './pages/TeamManagement.jsx'
 import store from './redux/store.js'
 
@@ -45,8 +47,16 @@ const router = createBrowserRouter([
     element: <ProtectedRoute><TeamManagement/></ProtectedRoute>
   },
   {
-    path:'/projects',
+    path:'projects/:project',
     element: <ProtectedRoute><ProjectManagement/></ProtectedRoute>
+  },
+  {
+    path:'/create-team',
+    element: <ProtectedRoute><TeamCreation/></ProtectedRoute>
+  },
+  {
+    path:'/task/:taskId',
+    element: <ProtectedRoute><TaskDetails/></ProtectedRoute>
   },
 
 

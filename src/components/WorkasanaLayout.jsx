@@ -7,7 +7,7 @@ const WorkasanaLayout = ({children,heading}) => {
     return(
 <div className="bg-primary min-h-screen" >
     <Navbar/>
-        <div className="p-12" >
+        <div className="px-12 py-6" >
             <div className="bg-white rounded-lg p-6" >
         <Header heading={heading} />
         <div>

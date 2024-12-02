@@ -1,22 +1,32 @@
-// Navbar.js
-import { Link } from "react-router-dom";
+
+import { IoLogOut } from "react-icons/io5";
+import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { rehydrate } from "../features/auth/authSlice";
 
 const Navbar = () => {
+
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const logout = () => {
+        dispatch(rehydrate(false));
+        localStorage.removeItem('auth-token');
+        navigate('/');
+
+    }
+
   return (
     <nav className="bg-primary-dark p-4 shadow-md">
       <div className="container mx-auto flex justify-between items-center">
         {/* Brand Name */}
         <div className="text-white text-xl font-bold">
-          Workasana
+          <Link to={'/dashboard'} >Workasana</Link> 
         </div>
 
         {/* Navbar Links */}
-        <div className="space-x-4">
-          <Link to="/dashboard" className="text-white hover:text-gray-300">Home</Link>
-          <Link to="/reports" className="text-white hover:text-gray-300">Reports</Link>
-          <Link to="/projects" className="text-white hover:text-gray-300">Projects</Link>
-          <Link to="/create-task" className="text-white hover:text-gray-300">Create-Task</Link>
-          <Link to="/teams" className="text-white hover:text-gray-300">Teams</Link>
+        <div onClick={logout} className="flex justify-between gap-2 text-secondary-light hover:cursor-pointer hover:text-secondary">
+         <p>Logout</p>
+         <IoLogOut className="text-2xl"/>
         </div>
       </div>
     </nav>
