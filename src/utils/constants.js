@@ -1,3 +1,3 @@
-const baseUrl = "http://localhost:3000"
+const baseUrl = "https://workasana-server.vercel.app/"
 
 export { baseUrl };
