@@ -53,7 +53,7 @@ const Dashboard = () => {
                     <h1 className="text-2xl" >Active Projects</h1>
                   
                     <div className="flex mt-2 gap-2 flex-wrap" > {activeProjects.map((project)=>(
-                        <Link to={`/projects/${encodeURIComponent(project.name)}`} onClick={()=> console.log(`projects/${encodeURIComponent(project.name)}`)}  className="bg-secondary border rounded-md shadow-sm py-1 px-3" key={project._id} >{project.name}</Link>
+                        <Link to={`/projects/${encodeURIComponent(project.name)}`} className="bg-secondary border rounded-md shadow-sm py-1 px-3" key={project._id} >{project.name}</Link>
                     ))}</div>
                 </div>
                 <div className="p-6 text-xl" >

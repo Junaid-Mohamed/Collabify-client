@@ -14,7 +14,6 @@ const ProtectedRoute = ({children})=>{
     useEffect(()=>{
         const token = localStorage.getItem('auth-token');
         if(token){
-            // console.log('authenticated.',isAuthenticated)
            dispatch(rehydrate(true)) 
         }
         setLoading(false); // Done with rehydration

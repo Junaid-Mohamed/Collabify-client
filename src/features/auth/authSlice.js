@@ -14,7 +14,6 @@ export const signUp = createAsyncThunk("auth/signup",async({name,email,password}
         const response = await axios.post(`${baseUrl}/api/auth/signup`, {name,email,password})
         return response.data;
     }catch(error){
-        console.log(error);
        return rejectWithValue(error.response.data.error); 
     }
 })
@@ -26,7 +25,6 @@ export const login = createAsyncThunk("auth/login",async({email,password}, {reje
         
         return response.data;
     }catch(error){
-        console.log(error);
        return rejectWithValue(error.response.data.message); 
     }
 })

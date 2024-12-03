@@ -10,14 +10,13 @@ const TeamManagement = () => {
     useEffect(()=>{
         const fetchData = async() => {
             const resp = await apiClient.get(`/api/teams`);
-            console.log(resp);
             setTeams(resp.data);
         }
         fetchData();
     },[])
     return(
         <WorkasanaLayout heading={"Team Management"} >
-<div className="grid gap-8 grid-cols-12" >
+        <div className="grid gap-8 grid-cols-12" >
             <div className="border shadow-md bg-secondary-light shadow-primary-light sticky col-span-4 max-h-fit" >
                 <div className="p-6 flex flex-col text-xl" >
                   <Link className="bg-secondary py-2 mb-2 px-8 rounded-lg" to={'/dashboard'} >Back to dashboard</Link>   

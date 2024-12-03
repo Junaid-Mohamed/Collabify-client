@@ -8,20 +8,16 @@ const TaskDetails = () => {
 
     const {taskId} = useParams();
     const [task,setTask] = useState({});
-    console.log(task === null);
     useEffect(()=>{
         const getTask = async()=>{
             const task = await apiClient.get(`/api/tasks/${taskId}`);
-            console.log(task);
             setTask(task.data)
         }
         getTask();
     },[])
 
     const markTaskComplete = async() => {
-        console.log("make BE call to mark this task as complete",taskId);
         const resp = await apiClient.put(`/api/tasks/${taskId}`, {status:"Completed"});
-        console.log(resp);
         toast.success(resp.data.message);
     }
     return(

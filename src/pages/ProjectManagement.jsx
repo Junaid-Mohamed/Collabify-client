@@ -15,7 +15,6 @@ const ProjectManagement = () => {
     const [ownerFilter,setOwnerFilter] = useState("");
     const [sortOrder, setSortOrder] = useState("asc");
 
-    console.log(tasks);
     /**
      * Short-Circuit Logic:
         For each filter, use ? : to decide if that filter should be applied:
@@ -36,7 +35,6 @@ const ProjectManagement = () => {
     return sortOrder === "asc" ? dueDateA - dueDateB : dueDateB - dueDateA;
     });
 
-    console.log(sortedTasks)
 
     useEffect(()=>{
         const fetchTasks = async() => {
@@ -89,12 +87,13 @@ const ProjectManagement = () => {
                             {sortOrder === "asc" ? "Far Due" : "Near Due"}
                         </button>
                     </div>
-                    { filteredTasks &&   <div className="flex flex-col mt-4 gap-2" > {filteredTasks.map((task)=>(
+                    { sortedTasks &&   <div className="flex flex-col mt-4 gap-2" > {sortedTasks.map((task)=>(
                         <div className="bg-secondary border rounded-md shadow-sm py-2 px-3" key={task._id} >
                              <p><span className="font-semibold" >{task.name}</span></p>
                              <p>status: {task.status}  </p>
                              <p>owners: {task.owners.map(o=>o.name).join(", ")}</p>
-                             <p>Due: {task.status !== 'Completed' ? `${getDueDate(task.createdAt, task.timeToComplete)}`:`Nil`}</p>
+                             {/* <p>Due: {task.status !== 'Completed' ? `${getDueDate(task.createdAt, task.timeToComplete)}`:`Nil`}</p> */}
+                             <p>Due: {`${getDueDate(task.createdAt, task.timeToComplete)}`}</p>
 
                         </div>
                        
