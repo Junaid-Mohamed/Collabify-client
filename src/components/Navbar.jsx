@@ -24,7 +24,7 @@ const Navbar = () => {
         </div>
 
         {/* Navbar Links */}
-        <div onClick={logout} className="flex justify-between gap-2 text-secondary-light hover:cursor-pointer hover:text-secondary">
+        <div onClick={logout} className="flex justify-between gap-2 text-white hover:cursor-pointer">
          <p>Logout</p>
          <IoLogOut className="text-2xl"/>
         </div>

@@ -14,9 +14,9 @@ export default {
           dark: '#A48BA4', // Dark purple
         },
         secondary: {
-          light: '#D3D5EE', // Light yellow
-          DEFAULT: '#B2B5E0', // Main yellow shade
-          dark: '#9093C0', // Dark yellow
+          light: '#DED0DE', // Light yellow
+          DEFAULT: '#C5ADC5', // Main yellow shade
+          dark: '#A48BA4', // Dark yellow
         },
       },
     },
