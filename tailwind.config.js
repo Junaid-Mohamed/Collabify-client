@@ -8,14 +8,15 @@ export default {
     extend: {
       colors: {
         primary: {
-          light: '#9F7AEA', // Light purple
-          DEFAULT: '#6B46C1', // Main purple shade
-          dark: '#44337A', // Dark purple
+
+          light: '#DED0DE', // Light purple
+          DEFAULT: '#C5ADC5', // Main purple shade
+          dark: '#A48BA4', // Dark purple
         },
         secondary: {
-          light: '#FDE68A', // Light yellow
-          DEFAULT: '#FBBF24', // Main yellow shade
-          dark: '#B7791F', // Dark yellow
+          light: '#D3D5EE', // Light yellow
+          DEFAULT: '#B2B5E0', // Main yellow shade
+          dark: '#9093C0', // Dark yellow
         },
       },
     },
