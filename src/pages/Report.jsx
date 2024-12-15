@@ -17,10 +17,43 @@ const Report = () => {
     const [teamClosedTasks, setTeamTasks] = useState({})
 
     useEffect(()=>{
+        try{
+            const fetchLastWeekReports = async () =>{
+                const response = await apiClient.get(`api/reports/last-week`);
+                const data = response.data;
+                const taskCountsByDate = {};
+                data.forEach(task=>{
+                    const date = new Date(task.updatedAt).toLocaleDateString();
+                    if(taskCountsByDate[date]){
+                        taskCountsByDate[date]+=1
+                    }else{
+                        taskCountsByDate[date] = 1
+                    }
+                })
+    
+                const dates = Object.keys(taskCountsByDate);
+                const tasksCount = Object.values(taskCountsByDate);
+            
+                setChartData({
+                    labels: dates,
+                    datasets: [
+                        {
+                            label: "Tasks Closed",
+                            data: tasksCount,
+                            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            borderWidth: 2,
+                        }
+                    ]
+                })
+            }
+            fetchLastWeekReports();
+        }catch(error){
+            console.error(error);
+        }
+       
         const fetchData = async ()=>{
-            const response = await apiClient.get(`api/reports/last-week`);
-            const data = response.data;
-
+    
             const daysResponse = await apiClient.get(`api/reports/pending`);
             const daysData = daysResponse.data;
 
@@ -29,32 +62,6 @@ const Report = () => {
 
             const closedTaskResponse = await apiClient.get(`api/reports/closed-tasks?groupBy=team`)
             const teamsClosedTasksdata = closedTaskResponse.data;
-            
-            const taskCountsByDate = {};
-            data.forEach(task=>{
-                const date = new Date(task.updatedAt).toLocaleDateString();
-                if(taskCountsByDate[date]){
-                    taskCountsByDate[date]+=1
-                }else{
-                    taskCountsByDate[date] = 1
-                }
-            })
-            
-            const dates = Object.keys(taskCountsByDate);
-            const tasksCount = Object.values(taskCountsByDate);
-        
-            setChartData({
-                labels: dates,
-                datasets: [
-                    {
-                        label: "Tasks Closed",
-                        data: tasksCount,
-                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                        borderColor: 'rgba(75, 192, 192, 1)',
-                        borderWidth: 2,
-                    }
-                ]
-            })
 
             const completedDays = daysData.completed;
             const pendingDays = daysData.pending;
@@ -87,8 +94,6 @@ const Report = () => {
                 ],
             })
 
-            
-            
             const teams = teamsClosedTasksdata.map(t=>t.team);
             const teamClosedTasksCount = teamsClosedTasksdata.map(t=>t.closedTasksCount)
            
@@ -141,7 +146,7 @@ const Report = () => {
                                 }
                             }}
                             />
-                        ): (<p>Loading data...</p>)}
+                        ): (<p>No Work completed last week</p>)}
                     </div>
                     <div className="my-6" > 
                         <hr className="my-2 border border-white" />
