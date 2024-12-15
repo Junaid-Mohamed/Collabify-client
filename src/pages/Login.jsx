@@ -40,11 +40,11 @@ const LoginPage = () => {
   return (
     <>
     <div className="flex flex-col items-center justify-center min-h-screen bg-primary-dark">
-      {/* <div className='bg-white p-4 rounded-lg text-lg mb-4' >
+      <div className='bg-white p-4 rounded-lg text-lg mb-4' >
         <h2>Test Login Details</h2>  
         <p>Email: <span className='text-red-400'>tina@gmail.com</span></p>
-        <p>Password: <span className='text-red-400' >Tina@12</span></p>
-      </div> */}
+        <p>Password: <span className='text-red-400' >tina@12</span></p>
+      </div>
       <div className="bg-white p-6 rounded-lg shadow-lg transform transition hover:scale-105 max-w-md w-full">
         <h1 className='text-2xl sm:text-4xl text-center  my-5 ' >Workasana</h1>
         <h2 className="text-lg sm:text-2xl font-semibold text-center mb-6">Log In</h2>
