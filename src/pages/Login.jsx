@@ -27,9 +27,7 @@ const LoginPage = () => {
     onSubmit: async (values) => {
       try {
         dispatch(login(values));
-        setTimeout(()=>{
-            navigate('/dashboard')
-        },[1500])
+        navigate("/dashboard")
         
       } catch (error) {
         console.error('Login error:', error);
