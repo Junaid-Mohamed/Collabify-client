@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import WorkasanaLayout from "../components/WorkasanaLayout";
+import CollabifyLayout from "../components/CollabifyLayout";
 import apiClient from "../utils/customAxios";
 import { getDueDate } from "../utils/customFunctions";
 
@@ -57,7 +57,8 @@ const ProjectManagement = () => {
     },[])
 
     return(
-        <WorkasanaLayout heading={`Project: ${projectName}`} >
+        
+        <CollabifyLayout heading={`Project: ${projectName}`} >
         <div className="grid gap-8 grid-cols-12" >
             <div className="border shadow-md bg-secondary-light shadow-primary-light sticky col-span-4 max-h-fit" >
                 <div className="p-6 flex flex-col text-xl" >
@@ -104,7 +105,7 @@ const ProjectManagement = () => {
                 </div>
             </div>
         </div>
-    </WorkasanaLayout>
+    </CollabifyLayout>
       
     )
 }

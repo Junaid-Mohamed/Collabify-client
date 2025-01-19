@@ -1,7 +1,7 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
-import WorkasanaLayout from "../components/WorkasanaLayout";
+import CollabifyLayout from "../components/CollabifyLayout";
 import apiClient from "../utils/customAxios";
 
 const TeamForm = () => {
@@ -78,11 +78,11 @@ const TeamForm = () => {
 
 const TeamCreation = () => {
     return(
-        <WorkasanaLayout heading={"Create New Team"} >
+        <CollabifyLayout heading={"Create New Team"} >
         <div>
         <TeamForm/>
         </div>
-    </WorkasanaLayout>
+    </CollabifyLayout>
 
     )
 }

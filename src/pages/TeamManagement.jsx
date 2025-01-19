@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import WorkasanaLayout from "../components/WorkasanaLayout";
+import CollabifyLayout from "../components/CollabifyLayout";
 import apiClient from "../utils/customAxios";
 
 const TeamManagement = () => {
@@ -15,7 +15,7 @@ const TeamManagement = () => {
         fetchData();
     },[])
     return(
-        <WorkasanaLayout heading={"Team Management"} >
+        <CollabifyLayout heading={"Team Management"} >
         <div className="grid gap-8 grid-cols-12" >
             <div className="border shadow-md bg-secondary-light shadow-primary-light sticky col-span-4 max-h-fit" >
                 <div className="p-6 flex flex-col text-xl" >
@@ -39,7 +39,7 @@ const TeamManagement = () => {
                 </div>
             </div>
         </div>
-    </WorkasanaLayout>
+    </CollabifyLayout>
     
 )}
 

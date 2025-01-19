@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import Select from "react-select";
-import WorkasanaLayout from "../components/WorkasanaLayout";
+import CollabifyLayout from '../components/CollabifyLayout';
 import apiClient from "../utils/customAxios";
 
 
@@ -229,11 +229,11 @@ const TaskForm = () => {
 
 const TaskCreation = () => {
     return(
-        <WorkasanaLayout heading={"Create New Task"} >
+        <CollabifyLayout heading={"Create New Task"} >
         <div>
         <TaskForm/>
         </div>
-    </WorkasanaLayout>
+    </CollabifyLayout>
 
     )
 }

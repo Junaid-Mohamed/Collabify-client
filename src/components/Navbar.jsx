@@ -20,7 +20,7 @@ const Navbar = () => {
       <div className="container mx-auto flex justify-between items-center">
         {/* Brand Name */}
         <div className="text-white text-xl font-bold">
-          <Link to={'/dashboard'} >Workasana</Link> 
+          <Link to={'/dashboard'} >Collabify</Link> 
         </div>
 
         {/* Navbar Links */}

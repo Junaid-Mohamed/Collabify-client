@@ -44,7 +44,7 @@ const LoginPage = () => {
         <p>Password: <span className='text-red-400' >tina@12</span></p>
       </div>
       <div className="bg-white p-6 rounded-lg shadow-lg transform transition hover:scale-105 max-w-md w-full">
-        <h1 className='text-2xl sm:text-4xl text-center  my-5 ' >Workasana</h1>
+        <h1 className='text-2xl sm:text-4xl text-center  my-5 ' >Collabify</h1>
         <h2 className="text-lg sm:text-2xl font-semibold text-center mb-6">Log In</h2>
         <form onSubmit={formik.handleSubmit} className="space-y-4">
           <input

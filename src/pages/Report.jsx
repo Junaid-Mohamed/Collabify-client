@@ -2,7 +2,7 @@ import { ArcElement, BarElement, CategoryScale, Chart as ChartJS, Legend, Linear
 import { useEffect, useState } from "react";
 import { Bar, Doughnut } from "react-chartjs-2";
 import { Link } from "react-router-dom";
-import WorkasanaLayout from "../components/WorkasanaLayout";
+import CollabifyLayout from "../components/CollabifyLayout";
 import apiClient from "../utils/customAxios";
 
 // Registering Chart.js components
@@ -115,7 +115,7 @@ const Report = () => {
     },[])
 
     return(
-        <WorkasanaLayout heading={'Workasana Reports'} >
+        <CollabifyLayout heading={'Collabify Reports'} >
               <div className="grid gap-8 grid-cols-12" >
             <div className="border shadow-md bg-secondary-light shadow-primary-light sticky col-span-4 max-h-fit" >
                 <div className="p-6 flex flex-col text-xl" >
@@ -268,7 +268,7 @@ const Report = () => {
                 </div>
             </div>
         </div>
-        </WorkasanaLayout>
+        </CollabifyLayout>
       
     )
 }

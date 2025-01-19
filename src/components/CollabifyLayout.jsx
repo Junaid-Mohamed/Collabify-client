@@ -3,7 +3,7 @@ import { Toaster } from 'react-hot-toast';
 import Header from "./Header";
 import Navbar from './Navbar';
 
-const WorkasanaLayout = ({children,heading}) => {
+const CollabifyLayout = ({children,heading}) => {
     return(
 <div className="bg-primary min-h-screen" >
     <Navbar/>
@@ -21,10 +21,10 @@ const WorkasanaLayout = ({children,heading}) => {
 }
 
 // Define propTypes for the component
-WorkasanaLayout.propTypes = {
+CollabifyLayout.propTypes = {
     heading: PropTypes.string.isRequired,  // heading should be a string and is required
     children: PropTypes.node.isRequired,  // children can be any renderable content and is required
 };
 
 
-export default WorkasanaLayout;
+export default CollabifyLayout;
